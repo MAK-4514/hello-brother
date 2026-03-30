@@ -60,7 +60,7 @@ app.use('/api/ai', aiLimiter, aiRoutes);
 app.get('/api/health', (req, res) => {
   res.json({
     success: true,
-    message: 'WanderLust Rentals API is running',
+    message: 'Hello Brother API is running',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development'
   });
@@ -96,15 +96,35 @@ const startServer = async () => {
       console.log('⚠️  No MONGODB_URI set — running in static/demo mode');
     }
 
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
+      // Get local network IP for mobile access
+      const os = require('os');
+      const interfaces = os.networkInterfaces();
+      let localIP = 'localhost';
+      for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+          if (iface.family === 'IPv4' && !iface.internal) {
+            localIP = iface.address;
+            break;
+          }
+        }
+        if (localIP !== 'localhost') break;
+      }
+
       console.log(`
 ╔══════════════════════════════════════════════╗
 ║                                              ║
-║   🚗 WanderLust Rentals Server               ║
-║   Running on http://localhost:${PORT}            ║
-║   Environment: ${(process.env.NODE_ENV || 'development').padEnd(26)}║
+║   🚗 Hello Brother Server                    ║
+║                                              ║
+║   Local:   http://localhost:${PORT}              ║
+║   Mobile:  http://${localIP}:${PORT}       ║
+║                                              ║
+║   Environment: ${(process.env.NODE_ENV || 'development').padEnd(26)}  ║
 ║                                              ║
 ╚══════════════════════════════════════════════╝
+
+📱 To view on mobile: Connect your phone to the
+   same WiFi and open http://${localIP}:${PORT}
       `);
     });
   } catch (error) {
