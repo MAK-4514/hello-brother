@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="WanderLust Rentals — Premium self-drive cars, bikes, scooties, camera gear rentals and custom holiday packages. Explore India your way with our AI-powered travel assistant.">
+  <meta name="keywords" content="self-drive car rental, bike rental, scooty rental, camera rental, holiday packages, travel India, road trip, adventure travel">
+  <meta name="author" content="WanderLust Rentals">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WanderLust Rentals — Your Adventure Starts Here">
+  <meta property="og:description" content="Self-drive cars, bikes, camera gear and curated holiday packages. Explore India on your terms.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wanderlustrentals.in">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (lightweight) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <title>WanderLust Rentals — Self-Drive Cars, Bikes, Cameras &amp; Holiday Packages</title>
+
+  <!-- Schema.org Local Business Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WanderLust Rentals",
+    "description": "Premium self-drive vehicle and camera rentals with curated holiday packages across India.",
+    "url": "https://wanderlustrentals.in",
+    "telephone": "+91-98765-43210",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "MG Road, Indiranagar",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "postalCode": "560038",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹₹",
+    "openingHours": "Mo-Su 08:00-22:00",
+    "sameAs": [
+      "https://instagram.com/wanderlustrentals",
+      "https://facebook.com/wanderlustrentals"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <div class="logo-icon">🚗</div>
+        <span>WanderLust</span>
+      </a>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="#services" class="nav-link active" data-section="services">Services</a>
+        <a href="#packages" class="nav-link" data-section="packages">Packages</a>
+        <a href="#features" class="nav-link" data-section="features">Why Us</a>
+        <a href="#testimonials" class="nav-link" data-section="testimonials">Reviews</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        <a href="#contact" class="nav-cta" id="nav-cta-btn">
+          <i data-lucide="calendar-check" style="width:16px;height:16px"></i>
+          Book Now
+        </a>
+      </div>
+
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero section" id="hero">
+    <div class="hero-slider" id="hero-slider">
+      <div class="hero-slide active">
+        <img src="/images/hero-car.png" alt="Self-drive luxury SUV on mountain highway" loading="eager">
+      </div>
+      <div class="hero-slide">
+        <img src="/images/hero-bike.png" alt="Motorbike on scenic coastal road" loading="lazy">
+      </div>
+      <div class="hero-slide">
+        <img src="/images/hero-camera.png" alt="Professional camera with travel backdrop" loading="lazy">
+      </div>
+      <div class="hero-slide">
+        <img src="/images/hero-holiday.png" alt="Tropical beach resort holiday destination" loading="lazy">
+      </div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content" data-animate="fade-up">
+      <div class="hero-badge">
+        <i data-lucide="sparkles" style="width:14px;height:14px"></i>
+        AI-Powered Travel Planning
+      </div>
+      <h1 class="hero-title">
+        Your Next<br>
+        <span class="highlight">Adventure</span> Awaits.
+      </h1>
+      <p class="hero-desc">
+        Rent self-drive cars, bikes, cameras, or discover curated holiday packages — all powered by our smart AI assistant that crafts your perfect trip.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary" id="hero-explore-btn">
+          <i data-lucide="compass" style="width:18px;height:18px"></i>
+          Explore Services
+        </a>
+        <button class="btn-secondary" id="hero-ai-btn">
+          <i data-lucide="bot" style="width:18px;height:18px"></i>
+          Ask AI Assistant
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat" data-animate="fade-up" data-delay="100">
+          <span class="hero-stat-value" id="stat-vehicles">500+</span>
+          <span class="hero-stat-label">Vehicles</span>
+        </div>
+        <div class="hero-stat" data-animate="fade-up" data-delay="200">
+          <span class="hero-stat-value" id="stat-customers">15K+</span>
+          <span class="hero-stat-label">Happy Riders</span>
+        </div>
+        <div class="hero-stat" data-animate="fade-up" data-delay="300">
+          <span class="hero-stat-value" id="stat-cities">25+</span>
+          <span class="hero-stat-label">Cities</span>
+        </div>
+        <div class="hero-stat" data-animate="fade-up" data-delay="400">
+          <span class="hero-stat-value" id="stat-rating">4.8</span>
+          <span class="hero-stat-label">Avg. Rating</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-dots" id="slider-dots">
+      <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="slider-dot" data-slide="3" aria-label="Slide 4"></button>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES SECTION ===================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">
+          <i data-lucide="layers" style="width:14px;height:14px"></i>
+          Our Services
+        </span>
+        <h2 class="section-title">Everything You Need<br>For The Perfect Trip</h2>
+        <p class="section-subtitle">From self-drive vehicles to camera gear — we've got every adventure covered.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Self-Drive Cars -->
+        <div class="service-card" data-animate="fade-up" id="service-cars">
+          <div class="service-card-image">
+            <img src="/images/service-car.png" alt="Premium self-drive car rental">
+            <span class="service-card-badge">Popular</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-icon">🚗</div>
+            <h3>Self-Drive Cars</h3>
+            <p>Premium SUVs, sedans & hatchbacks. Drive anywhere in India. Fully insured with 24/7 roadside assistance.</p>
+            <div class="service-card-price">
+              <span class="from">from</span>
+              <span class="amount">₹1,499</span>
+              <span class="unit">/day</span>
+            </div>
+            <a href="#contact" class="service-card-link">
+              Book Now <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bikes & Scooty -->
+        <div class="service-card" data-animate="fade-up" id="service-bikes">
+          <div class="service-card-image">
+            <img src="/images/service-bike.png" alt="Bike and scooty rental">
+            <span class="service-card-badge">Adventure</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-icon">🏍️</div>
+            <h3>Bikes & Scooty</h3>
+            <p>Royal Enfield, KTM, Honda Activa & more. Perfect for mountain passes and city exploration.</p>
+            <div class="service-card-price">
+              <span class="from">from</span>
+              <span class="amount">₹399</span>
+              <span class="unit">/day</span>
+            </div>
+            <a href="#contact" class="service-card-link">
+              Book Now <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Camera Rentals -->
+        <div class="service-card" data-animate="fade-up" id="service-cameras">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Professional camera equipment rental">
+            <span class="service-card-badge">Creative</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-icon">📸</div>
+            <h3>Camera Rentals</h3>
+            <p>DSLRs, mirrorless, GoPro & drones. Capture every moment in cinematic quality. Accessories included.</p>
+            <div class="service-card-price">
+              <span class="from">from</span>
+              <span class="amount">₹799</span>
+              <span class="unit">/day</span>
+            </div>
+            <a href="#contact" class="service-card-link">
+              Book Now <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Holiday Packages -->
+        <div class="service-card" data-animate="fade-up" id="service-holidays">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Custom holiday packages beach destination">
+            <span class="service-card-badge">Curated</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-icon">🌴</div>
+            <h3>Holiday Packages</h3>
+            <p>AI-crafted itineraries with self-drive options. Goa, Manali, Kerala, Ladakh & more destinations.</p>
+            <div class="service-card-price">
+              <span class="from">from</span>
+              <span class="amount">₹8,999</span>
+              <span class="unit">/person</span>
+            </div>
+            <a href="#packages" class="service-card-link">
+              View Packages <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES / WHY US ===================== -->
+  <section class="section" id="features" style="position:relative;">
+    <div class="glow-orb" style="top:-200px;left:-150px;"></div>
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">
+          <i data-lucide="award" style="width:14px;height:14px"></i>
+          Why WanderLust
+        </span>
+        <h2 class="section-title">Built for Travelers,<br>Powered by Trust</h2>
+        <p class="section-subtitle">What makes us India's most loved rental experience.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-animate="fade-up">
+          <div class="feature-icon">🛡️</div>
+          <h4>Fully Insured</h4>
+          <p>Complete insurance coverage on all vehicles. Zero liability for natural wear and tear.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up" style="transition-delay:0.1s">
+          <div class="feature-icon">📍</div>
+          <h4>Doorstep Delivery</h4>
+          <p>We deliver vehicles right to your hotel, airport, or any address across 25+ cities.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up" style="transition-delay:0.2s">
+          <div class="feature-icon">🤖</div>
+          <h4>AI Trip Planner</h4>
+          <p>Our AI assistant builds day-by-day itineraries and recommends the perfect vehicle for your trip.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up" style="transition-delay:0.3s">
+          <div class="feature-icon">💳</div>
+          <h4>Flexible Pricing</h4>
+          <p>Hourly, daily, or weekly plans. Transparent pricing with no hidden charges.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up" style="transition-delay:0.4s">
+          <div class="feature-icon">🔧</div>
+          <h4>24/7 Support</h4>
+          <p>Round-the-clock roadside assistance and customer support across India.</p>
+        </div>
+        <div class="feature-card" data-animate="fade-up" style="transition-delay:0.5s">
+          <div class="feature-icon">⚡</div>
+          <h4>Instant Booking</h4>
+          <p>Book in under 60 seconds. Instant confirmation with digital paperwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOLIDAY PACKAGES ===================== -->
+  <section class="section" id="packages">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">
+          <i data-lucide="map-pin" style="width:14px;height:14px"></i>
+          Holiday Packages
+        </span>
+        <h2 class="section-title">Curated Trips You'll<br>Fall In Love With</h2>
+        <p class="section-subtitle">Hand-picked destinations with AI-personalized itineraries and self-drive vehicle options.</p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Package 1 -->
+        <div class="package-card" data-animate="fade-up" id="pkg-goa">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa beach holiday">
+            <span class="package-tag">Beach Vibes</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              4D / 3N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Goa Beach Escape</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🏖️ Beach Hopping</span>
+              <span class="package-highlight">🛵 Scooty Included</span>
+              <span class="package-highlight">🍽️ Local Cuisine</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹12,999</span><br>
+                <span class="current-price">₹8,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.9 (240)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="package-card" data-animate="fade-up" style="transition-delay:0.1s" id="pkg-manali">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80" alt="Manali mountain adventure">
+            <span class="package-tag">Mountains</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              5D / 4N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Manali Adventure Trail</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🏔️ Rohtang Pass</span>
+              <span class="package-highlight">🚗 SUV Included</span>
+              <span class="package-highlight">🎿 Snow Activities</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹18,999</span><br>
+                <span class="current-price">₹12,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.8 (185)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="package-card" data-animate="fade-up" style="transition-delay:0.2s" id="pkg-kerala">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala backwaters trip">
+            <span class="package-tag">Backwaters</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              6D / 5N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Kerala Backwater Bliss</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🛶 Houseboat Stay</span>
+              <span class="package-highlight">🚗 Sedan Included</span>
+              <span class="package-highlight">🍃 Ayurveda Spa</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹22,999</span><br>
+                <span class="current-price">₹15,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.9 (312)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="package-card" data-animate="fade-up" style="transition-delay:0.3s" id="pkg-ladakh">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=600&q=80" alt="Ladakh road trip adventure">
+            <span class="package-tag">Epic Road Trip</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              8D / 7N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Ladakh Explorer</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🏍️ RE Himalayan</span>
+              <span class="package-highlight">📸 Camera Kit</span>
+              <span class="package-highlight">⛺ Camping</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹32,999</span><br>
+                <span class="current-price">₹22,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.9 (156)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="package-card" data-animate="fade-up" style="transition-delay:0.4s" id="pkg-rajasthan">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&q=80" alt="Rajasthan heritage tour">
+            <span class="package-tag">Heritage</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              7D / 6N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Royal Rajasthan Circuit</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🏰 Fort Stays</span>
+              <span class="package-highlight">🚗 Sedan Included</span>
+              <span class="package-highlight">🐪 Desert Safari</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹28,999</span><br>
+                <span class="current-price">₹19,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.7 (198)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="package-card" data-animate="fade-up" style="transition-delay:0.5s" id="pkg-meghalaya">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1591970929816-3e6c7c9f7d96?w=600&q=80" alt="Meghalaya northeast adventure">
+            <span class="package-tag">Offbeat</span>
+            <span class="package-duration">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              6D / 5N
+            </span>
+          </div>
+          <div class="package-content">
+            <h3>Meghalaya Hidden Gems</h3>
+            <div class="package-highlights">
+              <span class="package-highlight">🌿 Living Root Bridges</span>
+              <span class="package-highlight">🚙 SUV Included</span>
+              <span class="package-highlight">📸 Drone Rental</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">
+                <span class="old-price">₹25,999</span><br>
+                <span class="current-price">₹17,999</span>
+                <span class="per-person"> /person</span>
+              </div>
+              <div class="package-rating">
+                <i data-lucide="star" style="width:14px;height:14px;fill:currentColor"></i>
+                4.8 (89)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">
+          <i data-lucide="message-circle" style="width:14px;height:14px"></i>
+          Testimonials
+        </span>
+        <h2 class="section-title">What Our Travelers Say</h2>
+        <p class="section-subtitle">Real stories from real adventurers who chose WanderLust.</p>
+      </div>
+    </div>
+
+    <div class="testimonials-wrapper">
+      <div class="testimonials-track" id="testimonials-track">
+        <!-- Set 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Rented a Thar for our Ladakh trip — the vehicle was spotless, and the AI trip planner gave us an incredible itinerary. We discovered hidden gems we'd never have found otherwise!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AK</div>
+            <div class="testimonial-info">
+              <h5>Arjun Kapoor</h5>
+              <p>Ladakh Road Trip • SUV Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The camera rental was a game-changer. Got a Sony A7III with lenses for less than what one night at a resort costs. The photos from Meghalaya are now my portfolio highlights!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PS</div>
+            <div class="testimonial-info">
+              <h5>Priya Sharma</h5>
+              <p>Meghalaya Trip • Camera Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Booked the Goa package with a scooty add-on. Everything was seamless — from pickup to the curated food trail. Already planning our next trip with WanderLust!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RG</div>
+            <div class="testimonial-info">
+              <h5>Ravi & Geeta</h5>
+              <p>Goa Beach Escape • Holiday Package</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Royal Enfield Himalayan was in perfect shape for our Spiti ride. Doorstep delivery at 6 AM, exactly as promised. These guys understand riders!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">VT</div>
+            <div class="testimonial-info">
+              <h5>Vikram Thakur</h5>
+              <p>Spiti Valley • Bike Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a solo female traveler, safety was my top priority. WanderLust's 24/7 support and well-maintained Creta made my Kerala road trip absolutely stress-free."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NR</div>
+            <div class="testimonial-info">
+              <h5>Neha Reddy</h5>
+              <p>Kerala Backwaters • Self-Drive</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Used the AI assistant to plan my family's Rajasthan trip. It recommended an Innova for 6 of us and mapped out a perfect 7-day route. Mind-blowing tech integration!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DM</div>
+            <div class="testimonial-info">
+              <h5>Deepak Malhotra</h5>
+              <p>Rajasthan Circuit • Family Trip</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicated set for infinite scroll -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Rented a Thar for our Ladakh trip — the vehicle was spotless, and the AI trip planner gave us an incredible itinerary. We discovered hidden gems we'd never have found otherwise!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AK</div>
+            <div class="testimonial-info">
+              <h5>Arjun Kapoor</h5>
+              <p>Ladakh Road Trip • SUV Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The camera rental was a game-changer. Got a Sony A7III with lenses for less than what one night at a resort costs. The photos from Meghalaya are now my portfolio highlights!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PS</div>
+            <div class="testimonial-info">
+              <h5>Priya Sharma</h5>
+              <p>Meghalaya Trip • Camera Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Booked the Goa package with a scooty add-on. Everything was seamless — from pickup to the curated food trail. Already planning our next trip with WanderLust!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RG</div>
+            <div class="testimonial-info">
+              <h5>Ravi & Geeta</h5>
+              <p>Goa Beach Escape • Holiday Package</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Royal Enfield Himalayan was in perfect shape for our Spiti ride. Doorstep delivery at 6 AM, exactly as promised. These guys understand riders!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">VT</div>
+            <div class="testimonial-info">
+              <h5>Vikram Thakur</h5>
+              <p>Spiti Valley • Bike Rental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a solo female traveler, safety was my top priority. WanderLust's 24/7 support and well-maintained Creta made my Kerala road trip absolutely stress-free."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NR</div>
+            <div class="testimonial-info">
+              <h5>Neha Reddy</h5>
+              <p>Kerala Backwaters • Self-Drive</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Used the AI assistant to plan my family's Rajasthan trip. It recommended an Innova for 6 of us and mapped out a perfect 7-day route. Mind-blowing tech integration!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DM</div>
+            <div class="testimonial-info">
+              <h5>Deepak Malhotra</h5>
+              <p>Rajasthan Circuit • Family Trip</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA SECTION ===================== -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box" data-animate="scale-up">
+        <h2>Ready to Hit the Road? 🛣️</h2>
+        <p>Let our AI assistant plan your perfect trip — or browse our fleet and book in under 60 seconds.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="#contact" class="btn-primary" id="cta-book-btn">
+            <i data-lucide="rocket" style="width:18px;height:18px"></i>
+            Start Booking
+          </a>
+          <button class="btn-secondary" id="cta-ai-btn">
+            <i data-lucide="bot" style="width:18px;height:18px"></i>
+            Chat with WanderBot
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT & BOOKING ===================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">
+          <i data-lucide="phone" style="width:14px;height:14px"></i>
+          Get In Touch
+        </span>
+        <h2 class="section-title">Book Your Ride<br>or Plan a Trip</h2>
+        <p class="section-subtitle">Fill out the form and our team will get back to you within 30 minutes.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-animate="fade-right">
+          <h3>Let's Connect</h3>
+          <p>Whether you need a quick scooty rental or a full-fledged holiday plan — we're here to make it happen. Reach out via any channel below.</p>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div>
+              <h5>Call Us</h5>
+              <p>+91-98765-43210</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">💬</div>
+            <div>
+              <h5>WhatsApp</h5>
+              <p>+91-98765-43210</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">📧</div>
+            <div>
+              <h5>Email</h5>
+              <p>hello@wanderlustrentals.in</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">📍</div>
+            <div>
+              <h5>Visit Us</h5>
+              <p>MG Road, Indiranagar, Bangalore 560038</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="booking-form" id="booking-form" data-animate="fade-left">
+          <h3>Quick Booking Request</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-name">Your Name</label>
+              <input type="text" id="booking-name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-phone">Phone Number</label>
+              <input type="tel" id="booking-phone" name="phone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-email">Email Address</label>
+            <input type="email" id="booking-email" name="email" placeholder="you@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-service">Service Required</label>
+            <select id="booking-service" name="service" required>
+              <option value="" disabled selected>Choose a service...</option>
+              <option value="car">🚗 Self-Drive Car</option>
+              <option value="bike">🏍️ Bike Rental</option>
+              <option value="scooty">🛵 Scooty Rental</option>
+              <option value="camera">📸 Camera Rental</option>
+              <option value="holiday">🌴 Holiday Package</option>
+              <option value="combo">🎯 Custom Combo</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-start">Start Date</label>
+              <input type="date" id="booking-start" name="startDate" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-end">End Date</label>
+              <input type="date" id="booking-end" name="endDate" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-message">Special Requests</label>
+            <textarea id="booking-message" name="message" placeholder="Tell us about your trip — destination, group size, any preferences..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary form-submit" id="booking-submit-btn">
+            <i data-lucide="send" style="width:18px;height:18px"></i>
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">🚗</div>
+            <span>WanderLust</span>
+          </a>
+          <p>India's premium self-drive rental and travel experience platform. Explore on your terms, powered by AI.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram" id="social-instagram">
+              <i data-lucide="instagram" style="width:18px;height:18px"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook" id="social-facebook">
+              <i data-lucide="facebook" style="width:18px;height:18px"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter" id="social-twitter">
+              <i data-lucide="twitter" style="width:18px;height:18px"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
+              <i data-lucide="youtube" style="width:18px;height:18px"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="#services">Self-Drive Cars</a>
+          <a href="#services">Bikes & Scooty</a>
+          <a href="#services">Camera Rentals</a>
+          <a href="#packages">Holiday Packages</a>
+          <a href="#services">Airport Transfer</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Destinations</h4>
+          <a href="#packages">Goa</a>
+          <a href="#packages">Manali</a>
+          <a href="#packages">Kerala</a>
+          <a href="#packages">Ladakh</a>
+          <a href="#packages">Rajasthan</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Blog</a>
+          <a href="#">Partner With Us</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WanderLust Rentals. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== AI CHAT ASSISTANT ===================== -->
+  <div class="ai-assistant" id="ai-assistant">
+    <button class="ai-toggle" id="ai-toggle" aria-label="Open AI Assistant">
+      🤖
+      <span class="pulse"></span>
+    </button>
+
+    <div class="ai-chat-window" id="ai-chat-window">
+      <div class="ai-chat-header">
+        <div class="ai-chat-avatar">🤖</div>
+        <div class="ai-chat-header-info">
+          <h4>WanderBot</h4>
+          <p>AI Travel Assistant • Online</p>
+        </div>
+        <button class="ai-chat-close" id="ai-chat-close" aria-label="Close chat">
+          <i data-lucide="x" style="width:18px;height:18px"></i>
+        </button>
+      </div>
+
+      <div class="ai-chat-messages" id="ai-chat-messages">
+        <div class="ai-message bot">
+          👋 Hey there! I'm <strong>WanderBot</strong>, your AI travel buddy!<br><br>
+          I can help you with:<br>
+          🚗 Choosing the perfect vehicle<br>
+          📸 Camera gear recommendations<br>
+          🌴 Custom holiday itineraries<br><br>
+          Where are you headed? 🗺️
+        </div>
+      </div>
+
+      <div class="ai-quick-actions" id="ai-quick-actions">
+        <button class="ai-quick-btn" data-msg="Recommend a car for a mountain trip">🚗 Mountain trip car</button>
+        <button class="ai-quick-btn" data-msg="What bikes are best for Ladakh?">🏍️ Bikes for Ladakh</button>
+        <button class="ai-quick-btn" data-msg="Camera for travel photography">📸 Travel camera</button>
+        <button class="ai-quick-btn" data-msg="Plan a 5-day Goa holiday">🌴 Goa holiday plan</button>
+      </div>
+
+      <div class="ai-chat-input">
+        <input type="text" id="ai-chat-input" placeholder="Ask me anything about your trip..." autocomplete="off">
+        <button id="ai-send-btn" aria-label="Send message">
+          <i data-lucide="send" style="width:16px;height:16px"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="/js/particles.js"></script>
+  <script src="/js/slider.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/ai-assistant.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
